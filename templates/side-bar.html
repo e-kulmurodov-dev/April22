@@ -1,0 +1,25 @@
+<!-- Begin Li's Blog Sidebar Area -->
+<div class="col-lg-3 order-lg-1 order-2">
+    <div class="li-blog-sidebar-wrapper">
+        <div class="li-blog-sidebar">
+            <div class="li-sidebar-search-form pt-xs-30 pt-sm-30">
+                <form action="{% url 'blog_page' %}" method="get">
+                    <input type="text" class="li-search-field" placeholder="search here" name="search">
+                    <button type="submit" class="li-search-btn"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="li-blog-sidebar pt-25">
+            <h4 class="li-blog-sidebar-title">Categories</h4>
+            <ul class="li-blog-archive">
+                {% for category in categories %}
+                    <li><a href="{% url 'blog_page' %}?category={{ category.id }}">{{ category.name }} ({{ category.blog_set.count }})</a></li>
+                {% endfor %}
+
+
+            </ul>
+        </div>
+
+    </div>
+</div>
+<!-- Li's Blog Sidebar Area End Here -->

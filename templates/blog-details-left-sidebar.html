@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    {% include 'side-bar.html' %}
+    <!-- Begin Li's Main Content Area -->
+    <div class="col-lg-9 order-lg-2 order-1">
+        <div class="row li-main-content">
+            <div class="col-lg-12">
+                <div class="li-blog-single-item pb-30">
+                    <div class="li-blog-banner">
+                        <a href="{% url 'blog_detail' blog.id %}"><img class="img-full" src="{{ blog.image.url }}"</a>
+                    </div>
+                    <div class="li-blog-content">
+                        <div class="li-blog-details">
+                            <h3 class="li-blog-heading pt-25"><a href="#">{{ blog.name }}</a></h3>
+                            <div class="li-blog-meta">
+                                <a class="author" href="#"><i class="fa fa-user"></i>{{ blog.owner }}</a>
+                                <a class="comment" href="#"><i class="fa fa-comment-o"></i> {{ blog.comment_count }}
+                                    comment</a>
+                                <a class="post-time" href="#"><i class="fa fa-calendar"></i> {{ blog.created_at }}</a>
+                            </div>
+                            <p>{{ blog.description }}</p>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Begin Li's Blog Comment Section -->
+                <div class="li-comment-section">
+                    <h3>03 comment</h3>
+                    <ul>
+                        <li>
+                            <div class="author-avatar pt-15">
+                                <img src="images/product-details/user.png" alt="User">
+                            </div>
+                            <div class="comment-body pl-15">
+                                <span class="reply-btn pt-15 pt-xs-5"><a href="#">reply</a></span>
+                                <h5 class="comment-author pt-15">admin</h5>
+                                <div class="comment-post-date">
+                                    20 nov, 2018 at 9:30pm
+                                </div>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim maiores adipisci optio
+                                    ex, laboriosam facilis non pariatur itaque illo sunt?</p>
+                            </div>
+                        </li>
+                        <li class="comment-children">
+                            <div class="author-avatar pt-15">
+                                <img src="images/product-details/admin.png" alt="Admin">
+                            </div>
+                            <div class="comment-body pl-15">
+                                <span class="reply-btn pt-15 pt-xs-5"><a href="#">reply</a></span>
+                                <h5 class="comment-author pt-15">admin</h5>
+                                <div class="comment-post-date">
+                                    20 nov, 2018 at 9:30pm
+                                </div>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim maiores adipisci optio
+                                    ex, laboriosam facilis non pariatur itaque illo sunt?</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="author-avatar pt-15">
+                                <img src="images/product-details/admin.png" alt="Admin">
+                            </div>
+                            <div class="comment-body pl-15">
+                                <span class="reply-btn pt-15 pt-xs-5"><a href="#">reply</a></span>
+                                <h5 class="comment-author pt-15">admin</h5>
+                                <div class="comment-post-date">
+                                    20 nov, 2018 at 9:30pm
+                                </div>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim maiores adipisci optio
+                                    ex, laboriosam facilis non pariatur itaque illo sunt?</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Li's Blog Comment Section End Here -->
+                <!-- Begin Blog comment Box Area -->
+                <div class="li-blog-comment-wrapper">
+                    <h3>leave a reply</h3>
+                    <p>Your email address will not be published. Required fields are marked *</p>
+                    <form action="#">
+                        <div class="comment-post-box">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <label>comment</label>
+                                    <textarea name="commnet" placeholder="Write a comment"></textarea>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 mt-5 mb-sm-20 mb-xs-20">
+                                    <label>Name</label>
+                                    <input type="text" class="coment-field" placeholder="Name">
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 mt-5 mb-sm-20 mb-xs-20">
+                                    <label>Email</label>
+                                    <input type="text" class="coment-field" placeholder="Email">
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 mt-5 mb-sm-20">
+                                    <label>Website</label>
+                                    <input type="text" class="coment-field" placeholder="Website">
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="coment-btn pt-30 pb-sm-30 pb-xs-30 f-left">
+                                        <input class="li-btn-2" type="submit" name="submit" value="post comment">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!-- Blog comment Box Area End Here -->
+            </div>
+        </div>
+    </div>
+    <!-- Li's Main Content Area End Here -->
+    </div>
+    </div>
+    </div>
+    <!-- Li's Main Blog Page Area End Here -->
+{% endblock %}
