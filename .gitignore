@@ -1,0 +1,7 @@
+.venv
+media
+limupa-digital-products-store-ecommerce
+apps/static
+apps/migrations
+locale
+db_sqlite3

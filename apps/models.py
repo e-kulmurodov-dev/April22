@@ -7,7 +7,6 @@ from django.utils.translation import gettext_lazy as _
 from django_ckeditor_5.fields import CKEditor5Field
 
 
-
 # Create your models here.
 
 class Blog(models.Model):
@@ -49,8 +48,6 @@ class Product(models.Model):
     description = models.TextField(null=True, blank=True)
     info = models.JSONField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True, editable=False)
-
-
 
     class Meta:
         verbose_name = _('product')
